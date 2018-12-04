@@ -1,0 +1,5 @@
+{
+  "dir": "/data",
+  "email_auth": true,
+  "web_root": "/web_root"
+}

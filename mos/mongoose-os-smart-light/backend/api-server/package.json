@@ -1,0 +1,14 @@
+{
+  "name": "api-server",
+  "description": "Mongoose OS Smart Light API Server",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "https://mongoose-os.com/",
+  "license": "Apache 2.0",
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "axios": "^0.18.0",
+    "supervisor": "^0.12.0",
+    "ws": "^5.1.1"
+  }
+}

@@ -1,0 +1,35 @@
+version: '3'
+services:
+
+  nginx:
+    image: docker.io/mgos/nginx
+    volumes:
+      - ./data:/data
+      - ./mobile-app:/mobile-app
+    ports:
+      - 8008:8008
+      - 8009:8009
+    depends_on:
+      - dash
+    command: nginx -c /data/nginx.conf
+
+  api-server:
+    build: ./api-server
+    volumes:
+      - ./data:/data
+      - ./api-server:/api-server
+    ports:
+      - 8002:8002
+    command: node /main.js --port 8002 --dash dash:8001 --token 6de9f99d839f1e981138d6ff
+    # command: sh -c 'cd /api-server && (test -d node_modules || npm install) && ./node_modules/.bin/supervisor -t -- main.js --port 8002 --dash dash:8001 --token 6de9f99d839f1e981138d6ff'
+
+  dash:
+    image: docker.io/mgos/dash
+    volumes:
+    ports:
+      - 8001:8001
+    volumes:
+      - ./data:/data
+      # - /etc/ssl:/etc/ssl:ro
+      # - /usr/share/ca-certificates:/usr/share/ca-certificates:ro
+    command: /dash --config-file /data/dash_config.json

@@ -1,0 +1,61 @@
+Using port COM22
+Running configure get region
+AWS region: us-west-2
+Connecting to the device...
+  esp8266 DE4F2210805E running demo-js
+Current MQTT config: {
+  "clean_session": true,
+  "client_id": "",
+  "enable": false,
+  "keep_alive": 60,
+  "max_qos": 2,
+  "pass": "",
+  "reconnect_timeout_max": 60.000000,
+  "reconnect_timeout_min": 2.000000,
+  "recv_mbuf_limit": 3072,
+  "server": "iot.eclipse.org:1883",
+  "ssl_ca_cert": "",
+  "ssl_cert": "",
+  "ssl_cipher_suites": "",
+  "ssl_key": "",
+  "ssl_psk_identity": "",
+  "ssl_psk_key": "",
+  "user": "",
+  "will_message": "",
+  "will_topic": ""
+}
+Current AWS Greengrass config: {
+  "enable": false,
+  "reconnect_timeout_max": 60,
+  "reconnect_timeout_min": 2
+}
+Generating ECDSA private key
+Generating certificate request, CN: esp8266_10805E
+Asking AWS for a certificate...
+
+Certificate info:
+  Subject : CN=esp8266_10805E
+  Issuer  : OU=Amazon Web Services O=Amazon.com Inc. L=Seattle ST=Washington C=US
+  Serial  : 1203998745956217274753616405013920982395979875970
+  Validity: 2018/10/16 - 2049/12/31
+  Key algo: ECDSA
+  Sig algo: SHA256-RSA
+  ID      : 435157f55b61d3164ada8fbc53a5852573abffa111b8353a8e08fac6acef437b
+  ARN     : arn:aws:iot:us-west-2:575213043634:cert/435157f55b61d3164ada8fbc53a5852573abffa111b8353a8e08fac6acef437b
+AWS region: us-west-2
+Attaching policy "mos-default" to the certificate...
+Attaching the certificate to "esp8266_10805E"...
+Writing certificate to aws-esp8266_10805E.crt.pem...
+Uploading aws-esp8266_10805E.crt.pem (1141 bytes)...
+Writing key to aws-esp8266_10805E.key.pem...
+Uploading aws-esp8266_10805E.key.pem (227 bytes)...
+
+Updating config:
+  aws.thing_name = esp8266_10805E
+  mqtt.enable = true
+  mqtt.server = a1e6joc1firkfd.iot.us-west-2.amazonaws.com:8883
+  mqtt.ssl_ca_cert = ca.pem
+  mqtt.ssl_cert = aws-esp8266_10805E.crt.pem
+  mqtt.ssl_key = aws-esp8266_10805E.key.pem
+Setting new configuration...
+Saving and rebooting...
